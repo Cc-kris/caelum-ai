@@ -69,7 +69,7 @@ export const zhCN = {
             videoModelMissing: "请先在设置里配置可用的视频模型、Base URL 和 API Key",
             created: "任务已创建",
             createFailed: "任务创建失败",
-            title: "创作历史",
+            title: "任务中心",
             description: "查看文本、图片和视频生成任务，跟踪进度并处理失败任务。",
             taskCount: "{{count}} 个任务",
             newTask: "新建任务",

@@ -82,14 +82,14 @@ const featureGroups: FeatureGroup[] = [
             {
                 key: "imageWorkbenchEnabled",
                 title: "图片生成",
-                location: "侧栏 · 图片生成",
+                location: "侧栏 · 电商板块",
                 description: "电商 Agent 生成商品图也需要开启。关闭后历史作品保留。",
                 icon: <ImageIcon className="size-4" aria-hidden="true" />,
             },
             {
                 key: "videoWorkbenchEnabled",
                 title: "视频生成",
-                location: "侧栏 · 视频生成",
+                location: "侧栏 · 电商板块",
                 description: "商品视频也需要开启。关闭后历史作品保留。",
                 icon: <Video className="size-4" aria-hidden="true" />,
             },
@@ -117,7 +117,7 @@ const featureGroups: FeatureGroup[] = [
     {
         id: "tools",
         title: "插件与记录",
-        description: "插件调用和创作历史页",
+        description: "插件调用和任务中心页",
         icon: <PlugZap className="size-4" aria-hidden="true" />,
         rows: [
             {
@@ -139,7 +139,7 @@ const featureGroups: FeatureGroup[] = [
             {
                 key: "taskCenterEnabled",
                 title: "任务中心",
-                location: "侧栏 · 创作历史",
+                location: "侧栏 · 任务中心",
                 description: "关闭只隐藏记录页，不会停止生成任务。",
                 icon: <History className="size-4" aria-hidden="true" />,
             },

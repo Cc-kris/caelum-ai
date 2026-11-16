@@ -63,23 +63,28 @@ function buildNav(features: FeatureAvailability, t: TFunction): { groups: Worksp
         {
             items: [
                 { ...toolItem("create", "/", t), id: "home", title: t("nav.sidebar.home") },
-                { ...toolItem("assets", "/assets", t), title: t("nav.sidebar.assets") },
                 { ...toolItem("canvas", "/canvas", t), title: t("nav.sidebar.canvas") },
                 ...(features.shortDramaEnabled ? [{ ...toolItem("projects", "/projects", t), title: t("nav.sidebar.projects") }] : []),
                 ...(features.ecommerceEnabled ? [{ id: "ecommerce", title: t("nav.sidebar.ecommerce"), icon: ShoppingBag, to: "/ecommerce" }] : []),
             ],
         },
         {
-            heading: t("nav.sidebar.headingTools"),
+            heading: t("nav.sidebar.headingEcommerce"),
             items: [
                 ...(features.imageWorkbenchEnabled ? [{ id: "toolbox-image", title: t("nav.sidebar.toolboxImage"), icon: ImageIcon, to: "/toolbox/image" }] : []),
                 ...(features.videoWorkbenchEnabled ? [{ id: "toolbox-video", title: t("nav.sidebar.toolboxVideo"), icon: Video, to: "/toolbox/video" }] : []),
+            ],
+        },
+        {
+            heading: t("nav.sidebar.headingTools"),
+            items: [
                 { ...toolItem("skills", "/skills", t), title: t("nav.sidebar.skills") },
                 ...(features.pluginCenterEnabled ? [{ ...toolItem("plugins", "/plugins", t), title: t("nav.sidebar.plugins") }] : []),
+                { ...toolItem("assets", "/assets", t), title: t("nav.sidebar.assets") },
                 ...(features.taskCenterEnabled ? [{ id: "tasks", title: t("nav.sidebar.history"), icon: HistoryIcon, to: "/tasks" }] : []),
             ],
         },
-    ];
+    ].filter((group) => group.items.length > 0);
 
     // 管理、设置和退出登录不再占据参考站式侧栏底部，而是通过用户卡片菜单进入。
     // 路由和写操作仍保留，避免把用户端导航变成无法访问的装饰。

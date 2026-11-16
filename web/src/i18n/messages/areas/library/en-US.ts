@@ -70,7 +70,7 @@ export const enUS: DeepStringRecord<typeof zhCN> = {
             videoModelMissing: "Configure an available video model, Base URL, and API key in Settings first",
             created: "Task created",
             createFailed: "Failed to create task",
-            title: "Creation history",
+            title: "Task center",
             description: "View text, image, and video generation tasks, track progress, and handle failures.",
             taskCount: "{{count}} tasks",
             newTask: "New task",

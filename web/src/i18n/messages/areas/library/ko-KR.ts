@@ -70,7 +70,7 @@ export const koKR: DeepStringRecord<typeof zhCN> = {
             videoModelMissing: "먼저 설정에서 사용 가능한 동영상 모델, Base URL, API Key를 구성하세요",
             created: "작업이 생성되었습니다",
             createFailed: "작업 생성에 실패했습니다",
-            title: "창작 기록",
+            title: "작업 센터",
             description: "텍스트, 이미지, 동영상 생성 작업을 확인하고 진행 상황을 추적하며 실패한 작업을 처리합니다.",
             taskCount: "작업 {{count}}개",
             newTask: "새 작업",

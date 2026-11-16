@@ -70,7 +70,7 @@ export const deDE: DeepStringRecord<typeof zhCN> = {
             videoModelMissing: "Konfigurieren Sie zuerst in den Einstellungen ein verfügbares Videomodell, eine Base URL und einen API-Schlüssel",
             created: "Aufgabe erstellt",
             createFailed: "Aufgabe konnte nicht erstellt werden",
-            title: "Verlauf",
+            title: "Aufgaben",
             description: "Text-, Bild- und Videogenerierungen ansehen, Fortschritt verfolgen und fehlgeschlagene Aufgaben bearbeiten.",
             taskCount: "{{count}} Aufgaben",
             newTask: "Neue Aufgabe",

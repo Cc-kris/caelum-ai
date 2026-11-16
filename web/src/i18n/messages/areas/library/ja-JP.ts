@@ -70,7 +70,7 @@ export const jaJP: DeepStringRecord<typeof zhCN> = {
             videoModelMissing: "先に設定で利用可能な動画モデル、Base URL、API Key を設定してください",
             created: "タスクを作成しました",
             createFailed: "タスクの作成に失敗しました",
-            title: "作成履歴",
+            title: "タスクセンター",
             description: "テキスト・画像・動画の生成タスクを確認し、進捗を追跡して失敗したタスクに対処します。",
             taskCount: "{{count}} 件のタスク",
             newTask: "新規タスク",
