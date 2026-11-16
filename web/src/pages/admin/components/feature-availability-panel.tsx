@@ -96,7 +96,7 @@ const featureGroups: FeatureGroup[] = [
             {
                 key: "ecommerceEnabled",
                 title: "电商 Agent",
-                location: "侧栏 · 电商 Agent",
+                location: "侧栏 · 电商板块",
                 description: "关闭后隐藏入口且不能新建商品创作，已有项目和作品保留。",
                 icon: <ShoppingBag className="size-4" aria-hidden="true" />,
                 requires: [{ key: "imageWorkbenchEnabled", effect: "用户不能生成商品图" }],
