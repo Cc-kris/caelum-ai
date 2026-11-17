@@ -16,6 +16,11 @@ import (
 const CurrentSchemaVersion int64 = 104
 
 const baselineSchemaChecksum = "sha256:caelum-ai-schema-v1-20260830"
+
+// previousBaselineSchemaChecksum 是品牌名从 Caelun 更正为 Caelum 之前写入
+// schema_migrations 的基线指纹。它属于已落库的历史数据，不能靠替换文本修好，
+// 因此在校验时作为等价取值接受，保证旧库可以平滑升级。
+const previousBaselineSchemaChecksum = "sha256:caelun-ai-schema-v1-20260830"
 const schemaMigrationAppliedAtIndexChecksum = "sha256:schema-migrations-applied-at-index-v2-20260830"
 const assetTaxonomyCandidateIdentityChecksum = "sha256:asset-taxonomy-candidate-identity-v3-20260831-r1"
 const resourceUploadKeyChecksum = "sha256:resource-upload-key-v4-20260901"
@@ -1306,10 +1311,15 @@ func validateMigrationRecord(applied schemaMigration, expected migration) error 
 	if applied.Name != expected.name {
 		return fmt.Errorf("数据库迁移 %d 名称不一致：记录为 %s，程序期望 %s", expected.version, applied.Name, expected.name)
 	}
-	if applied.Checksum != expected.checksum {
+	if applied.Checksum != expected.checksum && !isAcceptedLegacyChecksum(applied.Checksum, expected.checksum) {
 		return fmt.Errorf("数据库迁移 %d 校验和不一致：记录为 %s，程序期望 %s", expected.version, applied.Checksum, expected.checksum)
 	}
 	return nil
+}
+
+// isAcceptedLegacyChecksum 允许历史上落库的等价指纹通过校验。
+func isAcceptedLegacyChecksum(applied, expected string) bool {
+	return expected == baselineSchemaChecksum && applied == previousBaselineSchemaChecksum
 }
 
 func RequireSchemaVersion(db *gorm.DB) error {
