@@ -526,7 +526,7 @@ export function useCanvasUpload({ canvasId, domainProjectId, nodesRef, selectedN
         async (position?: Position, clipboardEvent?: ClipboardEvent | null) => {
             const isNodeMarker = (value: string) => {
                 const trimmed = value.trim();
-                return trimmed.startsWith("caelun-ai-nodes:") || trimmed.startsWith("caelun-ai-nodes-json:");
+                return trimmed.startsWith("caelum-ai-nodes:") || trimmed.startsWith("caelum-ai-nodes-json:");
             };
             const pasteImageFile = async (file: File) => {
                 const selected = nodesRef.current.filter((node) => selectedNodeIdsRef.current.has(node.id));

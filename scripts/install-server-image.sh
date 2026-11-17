@@ -3,16 +3,16 @@
 set -Eeuo pipefail
 
 REPOSITORY_REF="${REPOSITORY_REF:-main}"
-INSTALL_DIR="${INSTALL_DIR:-/opt/caelun-ai}"
+INSTALL_DIR="${INSTALL_DIR:-/opt/caelum-ai}"
 CANVAS_HTTP_PORT="${CANVAS_HTTP_PORT:-3000}"
 REQUESTED_IMAGE_TAG="${CANVAS_IMAGE_TAG:-}"
 CANVAS_IMAGE_TAG="${REQUESTED_IMAGE_TAG#v}"
-IMAGE_REPOSITORY="${IMAGE_REPOSITORY:-ghcr.io/Cc-kris/caelun-ai}"
+IMAGE_REPOSITORY="${IMAGE_REPOSITORY:-ghcr.io/Cc-kris/caelum-ai}"
 CANVAS_BACKEND_IMAGE=""
 CANVAS_WEB_IMAGE=""
 COMPOSE_FILE="docker-compose.deploy.yml"
-COMPOSE_URL="${COMPOSE_URL:-https://raw.githubusercontent.com/Cc-kris/caelun-ai/${REPOSITORY_REF}/${COMPOSE_FILE}}"
-UPDATER_INSTALL_URL="${UPDATER_INSTALL_URL:-https://raw.githubusercontent.com/Cc-kris/caelun-ai/${REPOSITORY_REF}/scripts/install-host-updater.sh}"
+COMPOSE_URL="${COMPOSE_URL:-https://raw.githubusercontent.com/Cc-kris/caelum-ai/${REPOSITORY_REF}/${COMPOSE_FILE}}"
+UPDATER_INSTALL_URL="${UPDATER_INSTALL_URL:-https://raw.githubusercontent.com/Cc-kris/caelum-ai/${REPOSITORY_REF}/scripts/install-host-updater.sh}"
 
 step() {
     printf '\n==> %s\n' "$1"

@@ -11,7 +11,7 @@ import (
 	"yingce/backend/internal/repository"
 )
 
-const DefaultBrandName = "Caelun AI"
+const DefaultBrandName = "Caelum AI"
 
 // Host 由组合根注入，避免 auth → service 回环。
 type Host interface {

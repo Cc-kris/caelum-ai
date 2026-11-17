@@ -40,7 +40,7 @@ services:
 
   yingce-agent:
     # 让旧更新器也能完成本次升级；新版更新器在后续更新中会固定为镜像 digest。
-    image: ${CANVAS_YINGCE_AGENT_IMAGE:-ghcr.io/cc-kris/caelun-ai-yingce-agent:${CANVAS_IMAGE_TAG:?请先配置 CANVAS_IMAGE_TAG}}
+    image: ${CANVAS_YINGCE_AGENT_IMAGE:-ghcr.io/cc-kris/caelum-ai-yingce-agent:${CANVAS_IMAGE_TAG:?请先配置 CANVAS_IMAGE_TAG}}
     environment:
       YINGCE_AGENT_TOKEN: ${YINGCE_AGENT_TOKEN:-${CANVAS_UPDATER_TOKEN:?请先配置 YINGCE_AGENT_TOKEN}}
       MAX_CONCURRENT_SESSIONS: ${YINGCE_AGENT_MAX_SESSIONS:-8}
@@ -96,7 +96,7 @@ services:
       CANVAS_MCP_ALLOWED_PRIVATE_HOSTS: ${CANVAS_MCP_ALLOWED_PRIVATE_HOSTS:-}
       CANVAS_CORS_ORIGINS: ${CANVAS_CORS_ORIGINS:-}
       CANVAS_PUBLIC_BASE_URL: ${CANVAS_PUBLIC_BASE_URL:-}
-      CANVAS_UPDATER_SOCKET: /run/caelun-ai-updater/updater.sock
+      CANVAS_UPDATER_SOCKET: /run/caelum-ai-updater/updater.sock
       CANVAS_UPDATER_TOKEN: ${CANVAS_UPDATER_TOKEN:-}
       YINGCE_AGENT_URL: http://yingce-agent:8081
       YINGCE_AGENT_TOKEN: ${YINGCE_AGENT_TOKEN:-${CANVAS_UPDATER_TOKEN:?请先配置 YINGCE_AGENT_TOKEN}}
@@ -106,7 +106,7 @@ services:
       GIN_MODE: release
     volumes:
       - ${CANVAS_DATA_PATH:-backend-data}:/data
-      - ${CANVAS_UPDATER_SOCKET_DIR:-/run/caelun-ai-updater}:/run/caelun-ai-updater
+      - ${CANVAS_UPDATER_SOCKET_DIR:-/run/caelum-ai-updater}:/run/caelum-ai-updater
     mem_limit: ${CANVAS_BACKEND_MEMORY_LIMIT:-4g}
     cpus: ${CANVAS_BACKEND_CPUS:-2}
     pids_limit: ${CANVAS_BACKEND_PIDS_LIMIT:-256}

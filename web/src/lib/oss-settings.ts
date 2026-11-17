@@ -2,7 +2,7 @@ export type OSSProvider = "aliyun" | "tencent" | "qiniu" | "volcengine" | "s3";
 
 export type S3Preset = "aws" | "r2" | "b2" | "rustfs" | "custom";
 
-export const DEFAULT_OSS_PATH_PREFIX = "caelun-ai";
+export const DEFAULT_OSS_PATH_PREFIX = "caelum-ai";
 
 export type OSSConnectionTestInput = {
     provider: OSSProvider;

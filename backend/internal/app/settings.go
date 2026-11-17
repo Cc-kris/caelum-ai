@@ -26,7 +26,7 @@ import (
 
 const ossSettingKey = "oss"
 const encryptedSettingPrefix = "enc:v1:"
-const defaultOSSPathPrefix = "caelun-ai"
+const defaultOSSPathPrefix = "caelum-ai"
 
 const (
 	aliyunOSSProvider     = "aliyun"

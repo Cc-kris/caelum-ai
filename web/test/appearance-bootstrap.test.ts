@@ -6,7 +6,7 @@ import { moduleGroupSource } from "./helpers/module-group-source";
 test("initial HTML stays brand neutral until the public appearance is resolved", async () => {
     const [html, mainSource] = await Promise.all([Bun.file(new URL("../index.html", import.meta.url)).text(), Bun.file(new URL("../src/main.tsx", import.meta.url)).text()]);
 
-    expect(html).not.toContain("Caelun AI");
+    expect(html).not.toContain("Caelum AI");
     expect(html).toContain("<title>正在加载</title>");
     expect(mainSource).toContain("bootstrapAppearance()");
     expect(mainSource).toContain('import("./application")');
@@ -122,10 +122,10 @@ test("object storage can adopt the configured English brand identifier without r
     expect(source).toContain("setting.pathPrefix || DEFAULT_OSS_PATH_PREFIX");
 });
 
-test("appearance management exposes a server-side reset to the built-in Caelun AI brand", async () => {
+test("appearance management exposes a server-side reset to the built-in Caelum AI brand", async () => {
     const [pageSource, apiSource] = await Promise.all([Promise.resolve(moduleGroupSource("pages/admin/settings/appearance-settings-page.tsx")), Bun.file(new URL("../src/services/api/appearance.ts", import.meta.url)).text()]);
 
-    expect(pageSource).toContain("恢复Caelun AI默认");
+    expect(pageSource).toContain("恢复Caelum AI默认");
     expect(pageSource).toContain("resetAdminAppearance()");
     expect(pageSource).toContain("已上传文件仍保留在存储资源中");
     expect(apiSource).toContain('http.delete<{ setting: AdminAppearance }>("/admin/settings/appearance")');

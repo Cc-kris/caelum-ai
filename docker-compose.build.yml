@@ -1,6 +1,6 @@
 services:
   migrate:
-    image: caelun-ai-backend:server
+    image: caelum-ai-backend:server
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -8,13 +8,13 @@ services:
         GOPROXY: ${GOPROXY:-https://proxy.golang.org,direct}
 
   yingce-agent:
-    image: caelun-ai-yingce-agent:server
+    image: caelum-ai-yingce-agent:server
     build:
       context: .
       dockerfile: yingce-agent/Dockerfile
 
   backend:
-    image: caelun-ai-backend:server
+    image: caelum-ai-backend:server
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -22,7 +22,7 @@ services:
         GOPROXY: ${GOPROXY:-https://proxy.golang.org,direct}
 
   web:
-    image: caelun-ai-web:server
+    image: caelum-ai-web:server
     build:
       context: .
       dockerfile: Dockerfile

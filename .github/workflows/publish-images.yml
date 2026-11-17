@@ -89,22 +89,22 @@ jobs:
       matrix:
         include:
           # Web 的构建阶段固定 BUILDPLATFORM，静态文件只编译一次。
-          - image: caelun-ai-web
+          - image: caelum-ai-web
             dockerfile: Dockerfile
             arch: multi
             platforms: linux/amd64,linux/arm64
             runner: ubuntu-24.04
-          - image: caelun-ai-backend
+          - image: caelum-ai-backend
             dockerfile: backend/Dockerfile
             arch: amd64
             platforms: linux/amd64
             runner: ubuntu-24.04
-          - image: caelun-ai-backend
+          - image: caelum-ai-backend
             dockerfile: backend/Dockerfile
             arch: arm64
             platforms: linux/arm64
             runner: ubuntu-24.04-arm
-          - image: caelun-ai-yingce-agent
+          - image: caelum-ai-yingce-agent
             dockerfile: yingce-agent/Dockerfile
             arch: multi
             platforms: linux/amd64,linux/arm64
@@ -174,7 +174,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image: [caelun-ai-web, caelun-ai-backend, caelun-ai-yingce-agent]
+        image: [caelum-ai-web, caelum-ai-backend, caelum-ai-yingce-agent]
     # 不同提交可并行编译，但同一镜像的可变标签更新必须串行。
     concurrency:
       group: image-tags-${{ matrix.image }}-${{ github.ref }}
@@ -198,7 +198,7 @@ jobs:
           IMAGE: ghcr.io/${{ needs.prepare.outputs.owner }}/${{ matrix.image }}
           VERSION_TAG: ${{ needs.prepare.outputs.image_tag }}
           DIGEST_DIR: ${{ runner.temp }}/digests
-          EXPECTED_DIGESTS: ${{ matrix.image == 'caelun-ai-backend' && '2' || '1' }}
+          EXPECTED_DIGESTS: ${{ matrix.image == 'caelum-ai-backend' && '2' || '1' }}
         run: bash .github/scripts/promote-image.sh
 
   release:
@@ -223,10 +223,10 @@ jobs:
         run: |
           mkdir -p ../dist
           for arch in amd64 arm64; do
-            CGO_ENABLED=0 GOOS=linux GOARCH="$arch" go build -trimpath -ldflags="-s -w" -o "../dist/caelun-ai-host-updater-linux-$arch" ./cmd/host-updater
+            CGO_ENABLED=0 GOOS=linux GOARCH="$arch" go build -trimpath -ldflags="-s -w" -o "../dist/caelum-ai-host-updater-linux-$arch" ./cmd/host-updater
           done
           cd ../dist
-          sha256sum caelun-ai-host-updater-linux-* > SHA256SUMS
+          sha256sum caelum-ai-host-updater-linux-* > SHA256SUMS
       - name: Prepare release notes
         shell: bash
         run: |
@@ -236,7 +236,7 @@ jobs:
             found && /^## / { exit }
             found { print }
           ' CHANGELOG.md > dist/RELEASE_NOTES.md
-          test -s dist/RELEASE_NOTES.md || printf 'Caelun AI %s\n' "$version" > dist/RELEASE_NOTES.md
+          test -s dist/RELEASE_NOTES.md || printf 'Caelum AI %s\n' "$version" > dist/RELEASE_NOTES.md
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -251,8 +251,8 @@ jobs:
             latest_args+=(--latest)
           fi
           assets=(
-            dist/caelun-ai-host-updater-linux-amd64
-            dist/caelun-ai-host-updater-linux-arm64
+            dist/caelum-ai-host-updater-linux-amd64
+            dist/caelum-ai-host-updater-linux-arm64
             dist/SHA256SUMS
             docker-compose.deploy.yml
           )

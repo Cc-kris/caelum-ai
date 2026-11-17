@@ -180,14 +180,14 @@ func TestArchiveFromZipRejectsTraversalAndMultipleSkills(t *testing.T) {
 }
 
 func TestParseGitHubSkillURL(t *testing.T) {
-	spec, err := parseGitHubSkillURL("https://github.com/Cc-kris/caelun-ai/tree/main/skills/canvas-context", "", "")
+	spec, err := parseGitHubSkillURL("https://github.com/Cc-kris/caelum-ai/tree/main/skills/canvas-context", "", "")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if spec.Owner != "ddcat-ai" || spec.Repo != "caelun-ai" || spec.Ref != "main" || spec.Subdir != "skills/canvas-context" {
+	if spec.Owner != "Cc-kris" || spec.Repo != "caelum-ai" || spec.Ref != "main" || spec.Subdir != "skills/canvas-context" {
 		t.Fatalf("spec = %#v", spec)
 	}
-	if _, err := parseGitHubSkillURL("https://github.com/Cc-kris/caelun-ai/blob/main/SKILL.md", "", ""); err == nil {
+	if _, err := parseGitHubSkillURL("https://github.com/Cc-kris/caelum-ai/blob/main/SKILL.md", "", ""); err == nil {
 		t.Fatal("expected blob URL to be rejected")
 	}
 }

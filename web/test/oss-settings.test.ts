@@ -15,7 +15,7 @@ describe("OSS settings helpers", () => {
     });
 
     test("uses the product path prefix by default", () => {
-        expect(DEFAULT_OSS_PATH_PREFIX).toBe("caelun-ai");
+        expect(DEFAULT_OSS_PATH_PREFIX).toBe("caelum-ai");
     });
 
     test("rejects a connection test draft without a bucket", () => {

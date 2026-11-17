@@ -38,7 +38,7 @@ func (m *Manager) latestRelease(ctx context.Context) (*Release, error) {
 		return nil, err
 	}
 	request.Header.Set("Accept", "application/vnd.github+json")
-	request.Header.Set("User-Agent", "caelun-ai-host-updater")
+	request.Header.Set("User-Agent", "caelum-ai-host-updater")
 	request.Header.Set("X-GitHub-Api-Version", "2022-11-28")
 	if m.config.GitHubToken != "" {
 		request.Header.Set("Authorization", "Bearer "+m.config.GitHubToken)
@@ -178,7 +178,7 @@ func (m *Manager) prepareUpdaterBinary(targetVersion string) (string, error) {
 		return "", errors.New("未配置 Host Updater 二进制路径")
 	}
 	baseURL := fmt.Sprintf("https://github.com/%s/releases/download/%s/", m.config.Repository, targetVersion)
-	asset := "caelun-ai-host-updater-linux-" + runtime.GOARCH
+	asset := "caelum-ai-host-updater-linux-" + runtime.GOARCH
 	checksums, err := m.downloadReleaseAsset(baseURL+"SHA256SUMS", 1<<20)
 	if err != nil {
 		return "", fmt.Errorf("下载 Host Updater 校验清单：%w", err)
@@ -217,7 +217,7 @@ func (m *Manager) downloadReleaseAsset(url string, limit int64) ([]byte, error) 
 	if err != nil {
 		return nil, err
 	}
-	request.Header.Set("User-Agent", "caelun-ai-host-updater")
+	request.Header.Set("User-Agent", "caelum-ai-host-updater")
 	response, err := m.httpClient.Do(request)
 	if err != nil {
 		return nil, err
@@ -254,9 +254,9 @@ func immutableImageRefs(repository, version string) deploymentImages {
 	owner := strings.SplitN(repository, "/", 2)[0]
 	tag := strings.TrimPrefix(version, "v")
 	return deploymentImages{
-		backend: "ghcr.io/" + owner + "/caelun-ai-backend:" + tag,
-		web:     "ghcr.io/" + owner + "/caelun-ai-web:" + tag,
-		agent:   "ghcr.io/" + owner + "/caelun-ai-yingce-agent:" + tag,
+		backend: "ghcr.io/" + owner + "/caelum-ai-backend:" + tag,
+		web:     "ghcr.io/" + owner + "/caelum-ai-web:" + tag,
+		agent:   "ghcr.io/" + owner + "/caelum-ai-yingce-agent:" + tag,
 	}
 }
 
@@ -300,7 +300,7 @@ func (m *Manager) composeWithImages(composePath, imageTag string, images deploym
 func composeProjectName(installDir string) string {
 	name := filepath.Base(filepath.Clean(installDir))
 	if name == "." || name == string(filepath.Separator) || name == "" {
-		return "caelun-ai"
+		return "caelum-ai"
 	}
 	var builder strings.Builder
 	for _, char := range strings.ToLower(name) {
@@ -311,7 +311,7 @@ func composeProjectName(installDir string) string {
 	if result := strings.Trim(builder.String(), "-_ "); result != "" {
 		return result
 	}
-	return "caelun-ai"
+	return "caelum-ai"
 }
 
 func (m *Manager) writeComposeEnvOverride(images deploymentImages) (string, error) {

@@ -16,7 +16,7 @@ func TestTencentCOSConnectionTestUsesStorageEndpointInsteadOfCDN(t *testing.T) {
 	var storageMethods []string
 	storageServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		storageMethods = append(storageMethods, r.Method)
-		if !strings.HasPrefix(r.URL.Path, "/caelun-ai/.yingce-tests/platform/") {
+		if !strings.HasPrefix(r.URL.Path, "/caelum-ai/.yingce-tests/platform/") {
 			t.Errorf("path = %q", r.URL.Path)
 		}
 		if !strings.Contains(r.Header.Get("Authorization"), "q-sign-algorithm=sha1") {

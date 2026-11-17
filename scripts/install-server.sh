@@ -2,9 +2,9 @@
 
 set -Eeuo pipefail
 
-REPOSITORY_URL="${REPOSITORY_URL:-https://github.com/Cc-kris/caelun-ai.git}"
+REPOSITORY_URL="${REPOSITORY_URL:-https://github.com/Cc-kris/caelum-ai.git}"
 REPOSITORY_REF="${REPOSITORY_REF:-main}"
-INSTALL_DIR="${INSTALL_DIR:-/opt/caelun-ai}"
+INSTALL_DIR="${INSTALL_DIR:-/opt/caelum-ai}"
 CANVAS_HTTP_PORT="${CANVAS_HTTP_PORT:-3000}"
 COMPOSE_FILE="docker-compose.deploy.yml"
 BUILD_COMPOSE_FILE="docker-compose.build.yml"
@@ -64,7 +64,7 @@ install_docker() {
 }
 
 sync_source() {
-    step "下载Caelun AI源码"
+    step "下载Caelum AI源码"
     if [[ -d "$INSTALL_DIR/.git" ]]; then
         cd "$INSTALL_DIR"
         [[ -z "$(git status --porcelain --untracked-files=no)" ]] || fail "$INSTALL_DIR 存在本地代码改动，请先处理后再更新"
@@ -105,9 +105,9 @@ POSTGRES_PASSWORD=${database_password}
 DATABASE_URL=postgresql://open_ai_canvas:${database_password}@postgres:5432/open_ai_canvas?sslmode=disable
 CANVAS_HTTP_PORT=${CANVAS_HTTP_PORT}
 CANVAS_IMAGE_TAG=source
-CANVAS_BACKEND_IMAGE=caelun-ai-backend:server
-CANVAS_WEB_IMAGE=caelun-ai-web:server
-CANVAS_YINGCE_AGENT_IMAGE=caelun-ai-yingce-agent:server
+CANVAS_BACKEND_IMAGE=caelum-ai-backend:server
+CANVAS_WEB_IMAGE=caelum-ai-web:server
+CANVAS_YINGCE_AGENT_IMAGE=caelum-ai-yingce-agent:server
 YINGCE_AGENT_TOKEN=$(openssl rand -hex 32)
 CANVAS_REGISTRATION_ENABLED=false
 CANVAS_ALLOW_PRIVATE_UPSTREAMS=false

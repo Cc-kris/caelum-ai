@@ -3,6 +3,6 @@ export function shouldShowSidebarCheckin(input: { creditsEnabled?: boolean; chec
 }
 
 export function sidebarCheckinTitle(brandName: string) {
-    const name = brandName.trim() || "Caelun AI";
+    const name = brandName.trim() || "Caelum AI";
     return `${name}加油站`;
 }

@@ -15,7 +15,7 @@ import "./welcome.css";
 import { Select } from "@/components/ui/base/select";
 
 const StoryReel = lazy(() => import("./story-reel"));
-const github = "https://github.com/Cc-kris/caelun-ai";
+const github = "https://github.com/Cc-kris/caelum-ai";
 
 export default function WelcomePage() {
     const [look, setLook] = useState(getWelcomeLook);

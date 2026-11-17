@@ -6,7 +6,7 @@ import type { ChangeEvent } from "react";
 
 import type { ChannelHeader } from "@/stores/use-config-store";
 
-const DEFAULT_USER_AGENT = "CaelunAI/1.0 (+https://github.com/Cc-kris/caelun-ai)";
+const DEFAULT_USER_AGENT = "CaelumAI/1.0 (+https://github.com/Cc-kris/caelum-ai)";
 const MAX_HEADER_COUNT = 32;
 const BLOCKED_HEADERS = new Set([
     "authorization",

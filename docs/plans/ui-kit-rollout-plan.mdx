@@ -2,7 +2,7 @@
 
 状态：已接受（2026-09-05）。关联：决策记录 [ADR-0008](../adr/0008-ui-component-layer-antd-replacement.md)；组件编写规范 [ui-design-system](./ui-design-system.mdx)。
 
-**视觉数值权威源（AI 消费入口）**：`/Users/zhugeyue/Desktop/project/bigdate/github-source-code/composio-brand-package/`（与 caelun-ai 同级的兄弟仓库目录，下称「规范包」）。改造本项目配色/字体/间距时，**数值一律以该规范包为唯一权威源**，消费规则见 §2.4，禁止凭记忆或截图自拟色值/字号/间距。
+**视觉数值权威源（AI 消费入口）**：`/Users/zhugeyue/Desktop/project/bigdate/github-source-code/composio-brand-package/`（与 caelum-ai 同级的兄弟仓库目录，下称「规范包」）。改造本项目配色/字体/间距时，**数值一律以该规范包为唯一权威源**，消费规则见 §2.4，禁止凭记忆或截图自拟色值/字号/间距。
 
 本方案是本次 UI 治理的**唯一实施计划**，统管两件事：① 把 `web/src/components/ui` 重建为自研组件层（代号 Celadon UI）；② 按功能对等批次替换 AntD，最终脱离 `antd` 依赖。参考对象：**composio-brand-package**（唯一视觉数值权威源，直接采用其配色/字体/间距/圆角体系）+ **dbx**（组织与契约纪律，优秀项保留）+ **BoardUI**（设计深度：语义 token 状态矩阵、复合排版工具、react-aria 无障碍原语、动效纪律、agentic 应用层，弥补 dbx 短板）。
 
@@ -42,7 +42,7 @@
 | 图标由调用方传任意尺寸 class | Icon 以**组件引用**传入，尺寸/颜色由宿主组件用 token 决定（`@remixicon/react`） | ✅ §8 图标契约（本项目沿用 lucide-react） |
 | 动效无统一纪律 | `button-press-motion` 等工具类 + `::before` 渐变悬停交叉淡化 + `prefers-reduced-motion` | ✅ §9 动效纪律（本项目已有 motion v12） |
 | 组件注释缺溯源 | 每个组件头注释标注 Figma 源节点、尺寸表、明暗差异 | ✅ §10 注释规范（引用 token 组 + 对标对象） |
-| 无"agentic 界面"沉淀 | `application/agent-chat`（composer/history/message）、`agent-thinking`、`app-shell`、`data-table` 等产品块（~~notification-center~~ 🚫已禁用，不实施） | ✅ §12 backlog 的 P3 application 层（对齐Caelun AI AI 工作台） |
+| 无"agentic 界面"沉淀 | `application/agent-chat`（composer/history/message）、`agent-thinking`、`app-shell`、`data-table` 等产品块（~~notification-center~~ 🚫已禁用，不实施） | ✅ §12 backlog 的 P3 application 层（对齐Caelum AI AI 工作台） |
 
 ### 2.3 BoardUI 事实基线（2026-09-05 勘察）
 
@@ -50,7 +50,7 @@
 - 每组件：`interface XxxProps`（含 `ref`）+ 具名函数 + `cx` 合并 + 头部注释（Figma 源节点/尺寸/明暗差异）。变体用本地 style map（`sortCx`），不用 cva——**本项目沿用 cva**（既有习惯 + variants 类型导出更贴合 dbx barrel 形态）。
 - 语义 token 命名如 `bg-kbd-background`、`text-kbd-foreground`、`text-caption-1-semibold`、`bg-status-dot-green-halo`；radius 语义名 `radius/md`、`radius/2lg`；暗色仅调 halo 透明度等细节。
 - 依赖：`react-aria-components ^1.17`、`@remixicon/react ^4.9`、`@tanstack/react-table`、`recharts`、`@internationalized/date`、`motion ^12`、`tailwind-merge ^3`。
-- 形态定位："agentic interfaces"（chat/thinking/agent log/composer/sidebar）——与Caelun AI AI 影视短剧工作台高度同构。
+- 形态定位："agentic interfaces"（chat/thinking/agent log/composer/sidebar）——与Caelum AI AI 影视短剧工作台高度同构。
 
 ### 2.4 规范包（composio-brand-package）——唯一视觉数值权威源（AI 消费规则）
 
@@ -196,7 +196,7 @@ NodeTypeBadge、TextTooltip、LoadingState、SectionCard、PropertyRow、IconGro
 - 验证：`tsc --noEmit` + `vite build` 通过（跳过与本次无关的 build:bridge 预构建）；浏览器目验清单见 `docs/content/docs/progress/pending-test.mdx`（UI 组件同角色迁移节）。git 改动未提交。
 
 ### 阶段 E：application 产品块（P3，按需立项）
- 对齐 BoardUI `application/`：agent-chat（composer/history/message）、agent-thinking 指示、app-shell、data-table 等，映射Caelun AI AI 工作台场景（画布 AI 助手面板、生成/转写日志等；~~notification-center/通知中心~~ 🚫已禁用，不实施）。每块立项前先有真实页面需求与 ≥2 处重复证据。
+ 对齐 BoardUI `application/`：agent-chat（composer/history/message）、agent-thinking 指示、app-shell、data-table 等，映射Caelum AI AI 工作台场景（画布 AI 助手面板、生成/转写日志等；~~notification-center/通知中心~~ 🚫已禁用，不实施）。每块立项前先有真实页面需求与 ≥2 处重复证据。
 
 ## 12. 组件 backlog（汇总）
 

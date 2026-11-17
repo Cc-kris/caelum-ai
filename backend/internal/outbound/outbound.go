@@ -26,7 +26,7 @@ const (
 	maxOutboundHeaderBytes   = 16 << 10
 	maxProxyURLBytes         = 512
 	CustomRelayHeadersHeader = "X-Canvas-Upstream-Headers"
-	DefaultOutboundUserAgent = "CaelunAI/1.0 (+https://github.com/Cc-kris/caelun-ai)"
+	DefaultOutboundUserAgent = "CaelumAI/1.0 (+https://github.com/Cc-kris/caelum-ai)"
 )
 
 type OutboundHeader struct {

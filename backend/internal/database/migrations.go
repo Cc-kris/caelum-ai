@@ -15,7 +15,7 @@ import (
 
 const CurrentSchemaVersion int64 = 104
 
-const baselineSchemaChecksum = "sha256:caelun-ai-schema-v1-20260830"
+const baselineSchemaChecksum = "sha256:caelum-ai-schema-v1-20260830"
 const schemaMigrationAppliedAtIndexChecksum = "sha256:schema-migrations-applied-at-index-v2-20260830"
 const assetTaxonomyCandidateIdentityChecksum = "sha256:asset-taxonomy-candidate-identity-v3-20260831-r1"
 const resourceUploadKeyChecksum = "sha256:resource-upload-key-v4-20260901"

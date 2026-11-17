@@ -11,7 +11,7 @@ const (
 	qiniuKodoProvider     = "qiniu"
 	volcengineTOSProvider = "volcengine"
 	s3Provider            = "s3"
-	defaultOSSPathPrefix  = "caelun-ai"
+	defaultOSSPathPrefix  = "caelum-ai"
 	resourceAccessURLTTL  = 4 * time.Hour
 )
 

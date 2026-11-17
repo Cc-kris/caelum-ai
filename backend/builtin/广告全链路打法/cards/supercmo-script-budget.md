@@ -44,7 +44,7 @@ evidence: E4
 
 - 任何口播稿/旁白稿写作前。
 - 「稿子和视频长度对不上」的修复。
-- Caelun AI Agent 生成口播稿后的时长校验。
+- Caelum AI Agent 生成口播稿后的时长校验。
 
 ## E — 可执行步骤 (Execution)
 

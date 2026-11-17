@@ -150,9 +150,9 @@ func TestCheckWritableDirectory(t *testing.T) {
 func TestComposeProjectNameUsesInstallDirectory(t *testing.T) {
 	cases := map[string]string{
 		"/opt/yingce":           "yingce",
-		"/srv/Caelun AI_2": "openaicanvas_2",
-		"/":                     "caelun-ai",
-		"/srv/!!!":              "caelun-ai",
+		"/srv/Caelum AI_2": "openaicanvas_2",
+		"/":                     "caelum-ai",
+		"/srv/!!!":              "caelum-ai",
 	}
 	for installDir, want := range cases {
 		if got := composeProjectName(installDir); got != want {

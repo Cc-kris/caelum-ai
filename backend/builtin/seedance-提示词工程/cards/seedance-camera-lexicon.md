@@ -43,7 +43,7 @@ evidence: E4
 
 - 用户用口语描述镜头效果，需要术语化。
 - 提示词运镜段审查（冲突检测）。
-- Caelun AI Agent 编译分镜到提示词时的运镜词映射。
+- Caelum AI Agent 编译分镜到提示词时的运镜词映射。
 
 ## E — 可执行步骤 (Execution)
 

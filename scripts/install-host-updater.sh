@@ -2,12 +2,12 @@
 
 set -Eeuo pipefail
 
-INSTALL_DIR="${INSTALL_DIR:-/opt/caelun-ai}"
-REPOSITORY="${REPOSITORY:-Cc-kris/caelun-ai}"
-SOCKET_DIR="${CANVAS_UPDATER_SOCKET_DIR:-/run/caelun-ai-updater}"
-UPDATER_BIN="/usr/local/bin/caelun-ai-host-updater"
-UPDATER_ENV="/etc/caelun-ai-updater.env"
-UPDATER_SERVICE="/etc/systemd/system/caelun-ai-updater.service"
+INSTALL_DIR="${INSTALL_DIR:-/opt/caelum-ai}"
+REPOSITORY="${REPOSITORY:-Cc-kris/caelum-ai}"
+SOCKET_DIR="${CANVAS_UPDATER_SOCKET_DIR:-/run/caelum-ai-updater}"
+UPDATER_BIN="/usr/local/bin/caelum-ai-host-updater"
+UPDATER_ENV="/etc/caelum-ai-updater.env"
+UPDATER_SERVICE="/etc/systemd/system/caelum-ai-updater.service"
 
 fail() {
     printf 'Host Updater 安装失败：%s\n' "$1" >&2
@@ -48,7 +48,7 @@ install_binary() {
         aarch64|arm64) arch="arm64" ;;
         *) fail "不支持的 CPU 架构：$(uname -m)" ;;
     esac
-    asset="caelun-ai-host-updater-linux-${arch}"
+    asset="caelum-ai-host-updater-linux-${arch}"
     temporary="$(mktemp)"
     checksum_file="$(mktemp)"
     curl -fsSL "https://github.com/${REPOSITORY}/releases/download/${RELEASE_TAG}/${asset}" -o "$temporary"
@@ -83,11 +83,11 @@ ensure_token() {
 install_service() {
     local temporary_service
     install -d -m 0755 "$SOCKET_DIR"
-    install -d -m 0700 /var/lib/caelun-ai-updater "${INSTALL_DIR}/backups"
+    install -d -m 0700 /var/lib/caelum-ai-updater "${INSTALL_DIR}/backups"
     temporary_service="$(mktemp)"
     printf '%s\n' \
         '[Unit]' \
-        'Description=Caelun AI Host Updater' \
+        'Description=Caelum AI Host Updater' \
         'After=docker.service network-online.target' \
         'Requires=docker.service' \
         'Wants=network-online.target' \
@@ -102,15 +102,15 @@ install_service() {
         'PrivateTmp=true' \
         'ProtectHome=true' \
         'ProtectSystem=full' \
-        "ReadWritePaths=${INSTALL_DIR} /var/lib/caelun-ai-updater ${SOCKET_DIR} /usr/local/bin" \
+        "ReadWritePaths=${INSTALL_DIR} /var/lib/caelum-ai-updater ${SOCKET_DIR} /usr/local/bin" \
         '' \
         '[Install]' \
         'WantedBy=multi-user.target' > "$temporary_service"
     install -m 0644 "$temporary_service" "$UPDATER_SERVICE"
     rm -f "$temporary_service"
     systemctl daemon-reload
-    systemctl enable --now caelun-ai-updater.service
-    systemctl restart caelun-ai-updater.service
+    systemctl enable --now caelum-ai-updater.service
+    systemctl restart caelum-ai-updater.service
 }
 
 main() {

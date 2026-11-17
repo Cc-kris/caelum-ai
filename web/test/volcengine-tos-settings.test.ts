@@ -53,7 +53,7 @@ describe("Volcengine TOS storage settings", () => {
             pathStyle: false,
             allowUserS3: false,
             publicBaseUrl: "",
-            pathPrefix: "caelun-ai",
+            pathPrefix: "caelum-ai",
         };
         expect(isAdminOSSSetting(saved)).toBe(true);
         const payload = normalizeStoragePayload({ ...formValues(saved), endpoint: "tos-cn-beijing.volces.com", region: "", sessionToken: "x", pathStyle: true }, saved);

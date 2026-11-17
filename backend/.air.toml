@@ -1,9 +1,9 @@
 root = "."
-tmp_dir = "/tmp/caelun-ai-air"
+tmp_dir = "/tmp/caelum-ai-air"
 
 [build]
-bin = "/tmp/caelun-ai-air/server"
-cmd = "go build -o /tmp/caelun-ai-air/server ./cmd/server"
+bin = "/tmp/caelum-ai-air/server"
+cmd = "go build -o /tmp/caelum-ai-air/server ./cmd/server"
 delay = 800
 exclude_dir = ["data", "tmp", "vendor"]
 exclude_regex = ["_test\\.go"]

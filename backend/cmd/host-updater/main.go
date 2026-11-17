@@ -26,21 +26,21 @@ func main() {
 }
 
 func run(ctx context.Context) error {
-	socketPath := env("CANVAS_UPDATER_SOCKET", "/run/caelun-ai-updater/updater.sock")
+	socketPath := env("CANVAS_UPDATER_SOCKET", "/run/caelum-ai-updater/updater.sock")
 	token := strings.TrimSpace(os.Getenv("CANVAS_UPDATER_TOKEN"))
 	manager, err := hostupdate.NewManager(hostupdate.Config{
-		Repository:   env("CANVAS_UPDATER_REPOSITORY", "Cc-kris/caelun-ai"),
-		InstallDir:   env("CANVAS_UPDATER_INSTALL_DIR", "/opt/caelun-ai"),
+		Repository:   env("CANVAS_UPDATER_REPOSITORY", "Cc-kris/caelum-ai"),
+		InstallDir:   env("CANVAS_UPDATER_INSTALL_DIR", "/opt/caelum-ai"),
 		ComposeFile:  env("CANVAS_UPDATER_COMPOSE_FILE", "docker-compose.deploy.yml"),
 		EnvFile:      env("CANVAS_UPDATER_ENV_FILE", ".env"),
-		StateDir:     env("CANVAS_UPDATER_STATE_DIR", "/var/lib/caelun-ai-updater"),
-		BackupDir:    env("CANVAS_UPDATER_BACKUP_DIR", "/opt/caelun-ai/backups"),
+		StateDir:     env("CANVAS_UPDATER_STATE_DIR", "/var/lib/caelum-ai-updater"),
+		BackupDir:    env("CANVAS_UPDATER_BACKUP_DIR", "/opt/caelum-ai/backups"),
 		HealthURL:    strings.TrimSpace(os.Getenv("CANVAS_UPDATER_HEALTH_URL")),
 		GitHubToken:  strings.TrimSpace(os.Getenv("CANVAS_UPDATER_GITHUB_TOKEN")),
 		StableWindow: envDuration("CANVAS_UPDATER_STABLE_WINDOW", 30*time.Second),
 		StepTimeout:  envDuration("CANVAS_UPDATER_STEP_TIMEOUT", 20*time.Minute),
-		BinaryPath:   env("CANVAS_UPDATER_BINARY_PATH", "/usr/local/bin/caelun-ai-host-updater"),
-		ServiceName:  env("CANVAS_UPDATER_SERVICE_NAME", "caelun-ai-updater.service"),
+		BinaryPath:   env("CANVAS_UPDATER_BINARY_PATH", "/usr/local/bin/caelum-ai-host-updater"),
+		ServiceName:  env("CANVAS_UPDATER_SERVICE_NAME", "caelum-ai-updater.service"),
 		SelfUpdate:   envBool("CANVAS_UPDATER_SELF_UPDATE", true),
 	})
 	if err != nil {

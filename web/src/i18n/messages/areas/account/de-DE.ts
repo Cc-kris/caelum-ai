@@ -561,7 +561,7 @@ export const deDE: DeepStringRecord<typeof zhCN> = {
         lookPicker: "Materialversion der Startseite",
         look: "Materialversion",
         demoCredit: "Demomaterial · CC BY",
-        storyLabel: "Die kreative Reise mit Caelun AI",
+        storyLabel: "Die kreative Reise mit Caelum AI",
         watchClip: "Ausschnitt ansehen",
         enterStudio: "Ins Studio",
         nextChapter: "Nächste Szene",

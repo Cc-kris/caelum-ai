@@ -27,9 +27,9 @@ type CanvasClipboard = {
     connections: CanvasConnection[];
 };
 
-const CANVAS_NODES_CLIPBOARD_PREFIX = "caelun-ai-nodes:";
-const CANVAS_NODES_JSON_CLIPBOARD_PREFIX = "caelun-ai-nodes-json:";
-const CANVAS_NODES_CLIPBOARD_STORAGE_KEY = "caelun-ai:nodes-clipboard";
+const CANVAS_NODES_CLIPBOARD_PREFIX = "caelum-ai-nodes:";
+const CANVAS_NODES_JSON_CLIPBOARD_PREFIX = "caelum-ai-nodes-json:";
+const CANVAS_NODES_CLIPBOARD_STORAGE_KEY = "caelum-ai:nodes-clipboard";
 
 type UseCanvasNodeOperationsOptions = {
     projectId: string;

@@ -61,4 +61,4 @@ evidence: E4
 
 - **不发明主张**：没有的话去问。
 - **不换皮凑数**：同洞见不发两次。
-- **Caelun AI适配边界**：读图一步 Agent 无视觉通道，需用户提供产品事实与表面描述；生成走Caelun AI generate_media，画幅以其实际参数为准。
+- **Caelum AI适配边界**：读图一步 Agent 无视觉通道，需用户提供产品事实与表面描述；生成走Caelum AI generate_media，画幅以其实际参数为准。

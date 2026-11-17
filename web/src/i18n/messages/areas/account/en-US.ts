@@ -560,7 +560,7 @@ export const enUS: DeepStringRecord<typeof zhCN> = {
         lookPicker: "Home page footage version",
         look: "Footage version",
         demoCredit: "Demo footage · CC BY",
-        storyLabel: "The Caelun AI creative journey",
+        storyLabel: "The Caelum AI creative journey",
         watchClip: "Watch clip",
         enterStudio: "Enter the studio",
         nextChapter: "Next scene",

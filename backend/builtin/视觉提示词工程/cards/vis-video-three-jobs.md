@@ -44,7 +44,7 @@ evidence: E4
 
 - 分镜表审查/瘦身（每集 36 段配额紧张时尤其需要）。
 - 用户说「剪出来很平」的归因。
-- Caelun AI Agent 生成分镜后的职责审计项。
+- Caelum AI Agent 生成分镜后的职责审计项。
 
 ## E — 可执行步骤 (Execution)
 

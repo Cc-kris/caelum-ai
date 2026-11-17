@@ -70,10 +70,10 @@ type Manager struct {
 func NewManager(config Config) (*Manager, error) {
 	config.Repository = strings.TrimSpace(config.Repository)
 	if config.Repository == "" {
-		config.Repository = "Cc-kris/caelun-ai"
+		config.Repository = "Cc-kris/caelum-ai"
 	}
 	if config.InstallDir == "" {
-		config.InstallDir = "/opt/caelun-ai"
+		config.InstallDir = "/opt/caelum-ai"
 	}
 	if config.ComposeFile == "" {
 		config.ComposeFile = "docker-compose.deploy.yml"
@@ -82,7 +82,7 @@ func NewManager(config Config) (*Manager, error) {
 		config.EnvFile = ".env"
 	}
 	if config.StateDir == "" {
-		config.StateDir = "/var/lib/caelun-ai-updater"
+		config.StateDir = "/var/lib/caelum-ai-updater"
 	}
 	if config.BackupDir == "" {
 		config.BackupDir = filepath.Join(config.InstallDir, "backups")

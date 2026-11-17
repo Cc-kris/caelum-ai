@@ -9,7 +9,7 @@
 
 /* =========================================================================
    Design Token System — 三层架构 (Primitive → Semantic → Component)
-   详见 Wayfinder #96: https://github.com/Cc-kris/caelun-ai/issues/96
+   详见 Wayfinder #96: https://github.com/Cc-kris/caelum-ai/issues/96
    规范：禁止在组件中新增裸 text-[Npx]/rounded-[Npx]/z-[N]，必须使用 token
    ========================================================================= */
 
@@ -21040,7 +21040,7 @@ html:not(.dark) .creation-custom-value {
     }
 }
 
-/* ===== 素材库 · 重构（Caelun AI影视资产） =====
+/* ===== 素材库 · 重构（Caelum AI影视资产） =====
    与画布库共用 studio-band 毛玻璃页头与 frame 外壳；类型化封面、accent 反白筛选、
    批量操作条、banner+欢迎卡空态、资产档案抽屉。全局保持黑白单色。 */
 /* 页头右侧一行：紧凑容量计量 + 命令组。容量是只读信息，不画成控件外框。 */

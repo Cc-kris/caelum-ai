@@ -1,6 +1,6 @@
 # CHANGELOG
 
-本文件记录 Caelun AI 的版本变化。版本号从 `v1.0.0` 开始独立计数，更新由本仓库的 Release 与内置 Host Updater 提供。
+本文件记录 Caelum AI 的版本变化。版本号从 `v1.0.0` 开始独立计数，更新由本仓库的 Release 与内置 Host Updater 提供。
 
 ## v1.0.0
 
@@ -18,5 +18,5 @@
 ### 升级说明
 
 - 数据库 Schema 100。首次部署会自动建库建表；从其他分支迁入的部署请先备份数据目录再升级。
-- 自更新默认读取本仓库（`Cc-kris/caelun-ai`）的 Release；如需改为其他仓库或镜像源，请设置 `CANVAS_UPDATER_REPOSITORY` 与 `CANVAS_UPDATER_IMAGE_REPOSITORY` 等环境变量。
+- 自更新默认读取本仓库（`Cc-kris/caelum-ai`）的 Release；如需改为其他仓库或镜像源，请设置 `CANVAS_UPDATER_REPOSITORY` 与 `CANVAS_UPDATER_IMAGE_REPOSITORY` 等环境变量。
 - 远程服务商目录默认关闭；需要时通过 `CANVAS_PROVIDER_CATALOG_URL` 指定静态 JSON 目录地址。

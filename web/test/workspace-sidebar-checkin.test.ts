@@ -14,9 +14,9 @@ describe("sidebar checkin offer", () => {
     });
 
     test("uses the configured brand name instead of Buddy", () => {
-        expect(sidebarCheckinTitle("Caelun AI")).toBe("Caelun AI加油站");
+        expect(sidebarCheckinTitle("Caelum AI")).toBe("Caelum AI加油站");
         expect(sidebarCheckinTitle(" 本地工作室 ")).toBe("本地工作室加油站");
-        expect(sidebarCheckinTitle("")).toBe("Caelun AI加油站");
+        expect(sidebarCheckinTitle("")).toBe("Caelum AI加油站");
     });
 });
 
