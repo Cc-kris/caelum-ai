@@ -12,9 +12,6 @@ import { AppProviders } from "@/components/layout/app-providers";
 import { router } from "@/router";
 import { installSiteTrafficCollector } from "@/services/site-traffic";
 
-// 登录弹窗由 router.tsx 的 AppRoot 渲染在路由上下文内（弹窗内的表单要用 useSearchParams/useLocation）。
-// 不要把 AuthDialogHost 放回这里：它在 RouterProvider 之外，一打开就整页白屏。
-
 document.body.style.fontFamily = '"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif';
 
 createRoot(document.getElementById("root")!).render(
