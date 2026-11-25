@@ -1,5 +1,16 @@
 # CHANGELOG
+
+本文件记录 Caelum AI 的版本变化。本地版本号自 `v1.0.0` 起独立计数，更新由本仓库的 Release 与内置 Host Updater 提供；文件后半部保留上游 open-ai-canvas 的历史条目（上游早期也用过 `v1.0.x` 编号，与本地编号互不相关），对照上游改动请看 `v1.8.x` 段。
+
 ## Unreleased
+
+## v1.1.0
+
+- 同步上游 open-ai-canvas `v1.8.7.2`：Agent 热历史池与冷归档、会话删除/整理接口、画布历史生成合同兼容、配置出站代理时本机 DNS 修复、Seedance Compatible 结果地址兼容、可灵 4.0 / 万相 Wan 3 / xAI 视频协议更新、团队空间与素材共享、MCP 连接与插件市场、飞书反馈、运营分析看板等。
+- 品牌统一为 Caelum AI：展示文本替换「影策 / YingCe」；代码标识符（`yingce` 包名与模块路径、`YINGCE_AGENT_URL`、`*.yingce-plugin`、`yingce.tv`、`yingce-agent/`）保持原名，避免破坏运行时契约与插件包加载。
+- 数据库 Schema 由 100 升至 110；升级前请成组备份数据库与后端数据目录，再执行 `migrate-schema up` 与 `migrate-schema verify`，并同步更新 web、backend 与 yingce-agent。
+- 新增 `docs/upstream-sync.md`，记录同步状态、品牌替换规则与下次同步流程。
+
 
 ## v1.8.7.2
 - Agent 与存储：新增平台 Agent 热历史池、终态 gzip 冷归档和会话删除/整理接口，回填升级前的历史账本；数据库 Schema 从 109 升至 110。
@@ -1004,8 +1015,6 @@
 - 修复 Agent 会话未展示后端具体失败原因的问题。
 - 修复主页删除最近项目时未显示确认弹窗的问题。
 - 修复 PostgreSQL 用户活跃统计冲突更新时的列歧义问题。
-
-本文件记录 Caelum AI 的版本变化。版本号从 `v1.0.0` 起独立计数，更新由本仓库的 Release 与内置 Host Updater 提供；各版本条目保留上游 open-ai-canvas 的功能摘要，便于对照上游改动。
 
 ## v1.0.0
 
